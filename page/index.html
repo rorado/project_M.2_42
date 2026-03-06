@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects 42</title>
+    <style>
+      :root {
+        --bg: #0b1020;
+        --bg-soft: #121a33;
+        --card: #151f3f;
+        --text: #eaf1ff;
+        --muted: #9fb1d9;
+        --accent: #6ea8fe;
+        --accent-2: #8d6eff;
+        --border: #2a3767;
+        --success: #28d17c;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family:
+          Inter,
+          Segoe UI,
+          Roboto,
+          Arial,
+          sans-serif;
+        min-height: 100vh;
+        color: var(--text);
+        background:
+          radial-gradient(circle at 10% 10%, #1b2b58 0, transparent 35%),
+          radial-gradient(circle at 90% 20%, #2a1f57 0, transparent 30%),
+          linear-gradient(180deg, #0a0f1e 0%, #0b1020 100%);
+        padding: 40px 20px;
+      }
+
+      .container {
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+
+      .hero {
+        background: linear-gradient(
+          135deg,
+          rgba(110, 168, 254, 0.15),
+          rgba(141, 110, 255, 0.12)
+        );
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 30px;
+        margin-bottom: 26px;
+        backdrop-filter: blur(6px);
+      }
+
+      .badge {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #c8d6ff;
+        background: rgba(110, 168, 254, 0.15);
+        border: 1px solid rgba(110, 168, 254, 0.45);
+        border-radius: 999px;
+        padding: 7px 12px;
+        margin-bottom: 14px;
+      }
+
+      h1 {
+        font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+        margin-bottom: 10px;
+        line-height: 1.2;
+      }
+
+      .hero p {
+        color: var(--muted);
+        font-size: 1rem;
+        max-width: 760px;
+        line-height: 1.6;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .stat {
+        border: 1px solid var(--border);
+        background: rgba(13, 20, 43, 0.62);
+        border-radius: 14px;
+        padding: 12px 14px;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 1.2rem;
+        color: #ffffff;
+      }
+
+      .stat span {
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 15px;
+      }
+
+      .card {
+        border: 1px solid var(--border);
+        background: linear-gradient(
+          180deg,
+          rgba(26, 37, 74, 0.85),
+          rgba(16, 25, 52, 0.9)
+        );
+        border-radius: 16px;
+        padding: 16px;
+        transition:
+          transform 0.15s ease,
+          border-color 0.15s ease,
+          box-shadow 0.15s ease;
+        display: flex;
+        flex-direction: column;
+        min-height: 172px;
+      }
+
+      .card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(110, 168, 254, 0.8);
+        box-shadow: 0 10px 28px rgba(19, 33, 74, 0.55);
+      }
+
+      .card h2 {
+        font-size: 1.06rem;
+        margin-bottom: 8px;
+      }
+
+      .card p {
+        color: var(--muted);
+        line-height: 1.5;
+        flex: 1;
+        font-size: 0.95rem;
+        margin-bottom: 14px;
+      }
+
+      .actions {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 10px;
+        padding: 9px 12px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        border: 1px solid transparent;
+        transition: all 0.15s ease;
+      }
+
+      .btn.primary {
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        color: #040916;
+        margin: auto;
+      }
+
+      .btn.primary:hover {
+        filter: brightness(1.06);
+      }
+
+      .btn.ghost {
+        border-color: var(--border);
+        color: #cfdcff;
+        background: rgba(19, 29, 59, 0.65);
+      }
+
+      .btn.ghost:hover {
+        border-color: #708dd8;
+        background: rgba(24, 36, 73, 0.9);
+      }
+
+      footer {
+        margin-top: 22px;
+        color: var(--muted);
+        font-size: 0.86rem;
+        text-align: center;
+      }
+
+      .ok {
+        color: var(--success);
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <section class="hero">
+        <span class="badge">M.2</span>
+        <h1>Choose your Project and Start Quickly</h1>
+        <p>
+          Welcome to your project hub in M.2
+        </p>
+
+        <div class="stats">
+          <div class="stat">
+            <strong>12</strong>
+            <span>Available projects</span>
+          </div>
+          <div class="stat">
+            <strong>11</strong>
+            <span>Python module pages</span>
+          </div>
+          <div class="stat">
+            <strong>1</strong>
+            <span>A-Maze-ing page</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>A-Maze-ing Project</h2>
+          <p>
+            Open the dedicated page for your A-Maze-ing project and resources.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="a_maze_ing.html">Open Project</a>
+            <a class="btn primary" href="https://cdn.intra.42.fr/pdf/pdf/200764/en.subject.pdf" target="_blank">Open Subject</a>
+
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Python Module 00</h2>
+          <p>Module 00 project page.</p>
+          <div class="actions">
+            <a class="btn primary" href="py_00.html">Open Module</a>
+            <a class="btn primary" href="https://cdn.intra.42.fr/pdf/pdf/198921/en.subject.pdf" target="_blank">Open Subject</a>
+
+          </div>
+        </article>
+        <article class="card">
+          <h2>Python Module 01</h2>
+          <p>Module 01 project page.</p>
+          <div class="actions">
+            <a class="btn primary" href="py_01.html">Open Module</a>
+                <a class="btn primary" href="https://cdn.intra.42.fr/pdf/pdf/198919/en.subject.pdf" target="_blank">Open Subject</a>
+          </div>
+        </article>
+        <article class="card">
+          <h2>Python Module 02</h2>
+          <p>Module 02 project page.</p>
+          <div class="actions">
+            <a class="btn primary" href="py_02.html">Open Module</a>
+            <a class="btn primary" href="https://cdn.intra.42.fr/pdf/pdf/197432/en.subject.pdf" target="_blank">Open Subject</a>
+          </div>
+        </article>
+        <article class="card">
+          <h2>Python Module 03</h2>
+          <p>Module 03 project page.</p>
+          <div class="actions">
+            <a class="btn primary" href="py_03.html">Open Module</a>
+            <a class="btn primary" href="https://cdn.intra.42.fr/pdf/pdf/199687/en.subject.pdf" target="_blank">Open Subject</a>
+          </div>
+        </article>
+        <article class="card">
+          <h2>Python Module 04</h2>
+          <p>Module 04 project page.</p>
+          <div class="actions">
+            <a class="btn primary" href="py_04.html">Open Module</a>
+            <a class="btn primary" href="https://cdn.intra.42.fr/pdf/pdf/193402/en.subject.pdf" target="_blank">Open Subject</a>
+          </div>
+        </article>
+        <article class="card">
+          <h2>Python Module 05</h2>
+          <p>Module 05 project page.</p>
+          <div class="actions">
+            <a class="btn primary" href="py_05.html">Open Module</a>
+            <a
+              class="btn primary"
+              href="https://cdn.intra.42.fr/pdf/pdf/193404/en.subject.pdf"
+              target="_blank"
+              >Open Subject</a
+            >
+          </div>
+        </article>
+        <article class="card">
+          <h2>Python Module 06</h2>
+          <p>Module 06 project page.</p>
+          <div class="actions">
+            <a class="btn primary" href="py_06.html">Open Module</a>
+            <a class="btn primary" href="https://cdn.intra.42.fr/pdf/pdf/197462/en.subject.pdf" target="_blank">Open Subject</a>
+          </div>
+        </article>
+        <article class="card">
+          <h2>Python Module 07</h2>
+          <p>Module 07 project page.</p>
+          <div class="actions">
+            <a class="btn primary" href="py_07.html">Open Module</a>
+            <a class="btn primary" href="https://cdn.intra.42.fr/pdf/pdf/193403/en.subject.pdf" target="_blank">Open Subject</a>
+          </div>
+        </article>
+        <article class="card">
+          <h2>Python Module 08</h2>
+          <p>Module 08 project page.</p>
+          <div class="actions">
+            <a class="btn primary" href="py_08.html">Open Module</a>
+            <a class="btn primary" href="https://cdn.intra.42.fr/pdf/pdf/196060/en.subject.pdf" target="_blank">Open Subject</a>
+          </div>
+        </article>
+        <article class="card">
+          <h2>Python Module 09</h2>
+          <p>Module 09 project page.</p>
+          <div class="actions">
+            <a class="btn primary" href="py_09.html">Open Module</a>
+            <a class="btn primary" href="https://cdn.intra.42.fr/pdf/pdf/193406/en.subject.pdf" target="_blank">Open Subject</a>
+          </div>
+        </article>
+        <article class="card">
+          <h2>Python Module 10</h2>
+          <p>Module 10 project page.</p>
+          <div class="actions">
+            <a class="btn primary" href="py_10.html">Open Module</a>
+            <a class="btn primary" href="https://cdn.intra.42.fr/pdf/pdf/193407/en.subject.pdf" target="_blank">Open Subject</a>
+          </div>
+        </article>
+      </section>
+
+      <footer>
+        <span class="ok">Ready:</span> Don't forget to enjoy the journey and learn a lot! 🚀
+      </footer>
+    </main>
+  </body>
+</html>
